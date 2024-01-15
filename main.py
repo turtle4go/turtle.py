@@ -1,55 +1,214 @@
-import time
+class Turtle:
+  import time
+  import random
 
-print("hi this is turtle")
-print("i will make you say stuff")
-print("and if you dont i will kick you out")
-time.sleep(3)
-input = input("say dogecoin:")
-if input == "dogecoin":
-  print("cool")
-  print("now say turtle4go is the best")
-  unput = input("say it:")
-  if unput == "turtle4go is the best":
-    print("good kid you are")
-    print("guess what")
-    print("only a few people make it here")
-    print("now NO people make it after this! muwhahahahahhahahwhwhhaahahhwhwhahah!!!!!!")
-    time.sleep(1.5)
-    print("oh my laugh wasnt as dramtic as i thought it was lol")
-    onput = input("say 87370454165387563478563478564875634 divded by 87342 and since i have a calculator built inside me i can outsmart you HAHAHAHAHHA:")
-    if onput == 87370454165387563478563478564875634/87342:
-      print("WHATATATTATATATATTAATTATATATATTATAT!?!?!??! H--- O-O-OO---- W-wWww--W!?!?!??!??!")
-      print("oh maybe u cheated and used an online calculator oof")
-      print("but you shall be stabbed to the heart in this one HAHAHAHHAAHAHAH!!!!!!!")
-      time.sleep(2.5)
-      enput = input("say i am a sussy baka dun dun dun dun:")
-      if enput == "i am a sussy baka dun dun dun dun":
-        print("HA you are a sussy baka you said it yourself LOL!")
-        print("this last one is the hardest and tuffest one")
-        time.sleep(5)
-        anput = input("what is skibidi toilet episode 59 about in one word MUWHAHAHAHHAHAHAHA!!!!:")
-        if anput == "titan-speakerman":
-          print("my time has come")
-          print("i will get my revenge....")
-          time.sleep(2.5)
-          print("you be like: BRUH IDC WITH THE SAD LORE!")
-          print("U WIN!!!!")
-        else:
-          print("get wrecked")
-          time.sleep(3)
-          break
-      else:
-        print("rick astley got you and rickrolled you so fly high")
-        time.sleep(1.5)
-        break
-    else:
-      print("get vanished to adoms kid")
-      time.sleep(1)
-      break
-  else:
-    print("THEE SHALL BE BANISHED!")
+  print("hi this is turtle")
+  input = input("this is a test by the way; is it?y/n: ")
+  if input == "y":
+    print("ok yay")
+    print("now i will chose a number and there is a 10% chance you will get it")
     time.sleep(3)
-else:
-  print("die")
-  time.sleep(3)
-  break
+    random.randint(0, 11)
+    if random == 0:
+      print("nope reload to try again")
+    if random == 1:
+      print("nope reload to try again")
+    if random == 2:
+      print("nope reload to try again")
+    if random == 3:
+      print("nope reload to try again")
+    if random == 4:
+      print("nope reload to try again")
+    if random == 5:
+      print("nope reload to try again")
+    if random == 6:
+      print("nope reload to try again")
+    if random == 7:
+      print("cool; you win")
+    if random == 8:
+      print("nope reload to try again")
+    if random == 9:
+      print("nope reload to try again")
+    if random == 10:
+      print("nope reload to try again")
+    if random == 11:
+      print("nope reload to try again")
+ 
+  if input == "n":
+    print("w̷̝̤̥͈̎̈̓h̶̛͔̜̲̥̮̲͙̑̑̈́̾̆̉̅̒̏̓̌́͠͝a̶̢̳̰̹̳̫̻͚͗̉t̵̢̡̧͎̟̹͓̉̓ ̸͉́͒̀̇̉̌͝ỵ̴̩̝̼͇̦̙͖̜̤̎̇̓͆̏̌̃̏̓̽͝͠ͅò̷̙̘̰̭͛́͂̀ͅư̴̛͕̬͚̺̈́͗ ̷̛̛̦̝̣͇̙͆͒̀̋̀̇̏̀̑̀̕s̴̛̖̞̍̀͆̌̌̒̕a̷̛̹̖̟̘͉̠̦͚̞͊́̕͘ÿ̸͚͕̲̝͆͋̍̀̒̍̔̏̇͊͠͝")
+    print("1v1 me in snake")...
+    # ************************************
+# Python Snake
+# ************************************
+  from tkinter import *
+  import random
+
+  GAME_WIDTH = 700
+  GAME_HEIGHT = 700
+  SPEED = 50
+  SPACE_SIZE = 50
+  BODY_PARTS = 3
+  SNAKE_COLOR = "#00FF00"
+  FOOD_COLOR = "#FF0000"
+  BACKGROUND_COLOR = "#000000"
+
+
+  class Snake:
+
+      def __init__(self):
+          self.body_size = BODY_PARTS
+          self.coordinates = []
+          self.squares = []
+
+          for i in range(0, BODY_PARTS):
+              self.coordinates.append([0, 0])
+
+          for x, y in self.coordinates:
+              square = canvas.create_rectangle(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=SNAKE_COLOR, tag="snake")
+              self.squares.append(square)
+
+
+  class Food:
+
+      def __init__(self):
+
+          x = random.randint(0, (GAME_WIDTH / SPACE_SIZE)-1) * SPACE_SIZE
+          y = random.randint(0, (GAME_HEIGHT / SPACE_SIZE) - 1) * SPACE_SIZE
+
+          self.coordinates = [x, y]
+
+          canvas.create_oval(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=FOOD_COLOR, tag="food")
+
+
+  def next_turn(snake, food):
+
+      x, y = snake.coordinates[0]
+
+      if direction == "up":
+          y -= SPACE_SIZE
+      elif direction == "down":
+          y += SPACE_SIZE
+      elif direction == "left":
+          x -= SPACE_SIZE
+      elif direction == "right":
+          x += SPACE_SIZE
+
+      snake.coordinates.insert(0, (x, y))
+
+      square = canvas.create_rectangle(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=SNAKE_COLOR)
+
+      snake.squares.insert(0, square)
+
+      if x == food.coordinates[0] and y == food.coordinates[1]:
+
+          global score
+
+          score += 1
+
+          label.config(text="Score:{}".format(score))
+
+          canvas.delete("food")
+
+          food = Food()
+
+      else:
+
+          del snake.coordinates[-1]
+
+          canvas.delete(snake.squares[-1])
+
+          del snake.squares[-1]
+
+      if check_collisions(snake):
+          game_over()
+
+      else:
+        window.after(SPEED, next_turn, snake, food)
+
+
+  def change_direction(new_direction):
+
+      global direction
+
+      if new_direction == 'left':
+          if direction != 'right':
+              direction = new_direction
+      elif new_direction == 'right':
+          if direction != 'left':
+              direction = new_direction
+      elif new_direction == 'up':
+          if direction != 'down':
+              direction = new_direction
+      elif new_direction == 'down':
+          if direction != 'up':
+              direction = new_direction
+
+
+  def check_collisions(snake):
+
+      x, y = snake.coordinates[0]
+
+      if x < 0 or x >= GAME_WIDTH:
+          return True
+      elif y < 0 or y >= GAME_HEIGHT:
+          return True
+
+      for body_part in snake.coordinates[1:]:
+          if x == body_part[0] and y == body_part[1]:
+              return True
+
+      return False
+
+
+  def game_over():
+
+      canvas.delete(ALL)
+      canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
+                       font=('consolas',70), text="GAME OVER", fill="red", tag="gameover")
+
+
+  window = Tk()
+  window.title("Snake game")
+  window.resizable(False, False)
+
+  score = 0
+  direction = 'down'
+
+  label = Label(window, text="Score:{}".format(score), font=('consolas', 40))
+  label.pack()
+
+  canvas = Canvas(window, bg=BACKGROUND_COLOR, height=GAME_HEIGHT, width=GAME_WIDTH)
+  canvas.pack()
+
+  window.update()
+
+  window_width = window.winfo_width()
+  window_height = window.winfo_height()
+  screen_width = window.winfo_screenwidth()
+  screen_height = window.winfo_screenheight()
+
+  x = int((screen_width/2) - (window_width/2))
+  y = int((screen_height/2) - (window_height/2))
+
+  window.geometry(f"{window_width}x{window_height}+{x}+{y}")
+
+  window.bind('<Left>', lambda event: change_direction('left'))
+  window.bind('<Right>', lambda event: change_direction('right'))
+  window.bind('<Up>', lambda event: change_direction('up'))
+  window.bind('<Down>', lambda event: change_direction('down'))
+
+  snake = Snake()
+  food = Food()
+
+  next_turn(snake, food)
+
+  window.mainloop()
+
+
+
+
+
+  else:
+    print("are you dumb? that doesn't exist in y/n")
+  
+  
